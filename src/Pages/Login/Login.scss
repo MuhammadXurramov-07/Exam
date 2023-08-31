@@ -1,0 +1,188 @@
+.login_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: consolas;
+  overflow: hidden;
+  background-color: #cfd1e1;
+
+  .login {
+    margin: 0 1rem;
+    position: relative;
+    width: 500px;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+
+    @media (max-width: 430px){
+      height: 450px;
+    }
+
+    .content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: linear-gradient(#dbdae1, #a3aaba);
+      box-shadow: 5px 5px 5px #00000010, 15px 15px 15px #00000010,
+        20px 10px 20px #00000010, 50px 50px 80px #00000025,
+        inset 3px 3px 2px #fff;
+
+      form {
+        position: relative;
+        width: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: transparent !important;
+
+        @media (max-width: 430px){
+          width: 65%;
+        }
+
+        h1 {
+          font-size: 2rem;
+          color: #444 !important;
+          margin-bottom: 1.4rem;
+        }
+        .logo {
+          width: 70px;
+          height: 70px;
+          background: #444;
+          color: #fff;
+          font-size: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+        }
+        .inputBox {
+          position: relative;
+          width: 100%;
+          margin-top: 30px;
+
+          input {
+            position: relative;
+            width: 100%;
+            padding: 10px 0 10px 25px;
+            font-size: 1.25em;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid #444;
+            outline: none;
+          }
+          i {
+            position: absolute;
+            left: 0;
+            bottom: 15px;
+            font-size: 1.25em;
+            color: #444;
+          }
+          span {
+            position: absolute;
+            left: 0;
+            padding: 10px 0 10px 25px;
+            font-size: 1.25em;
+            pointer-events: none;
+            color: #444;
+            transition: 0.5s;
+          }
+          // input:invalid ~ span
+          // // input:focus ~ span
+          //  {
+          //   transform: translateY(-20px);
+          //   font-size: 0.9em;
+          //   color: #fff;
+          //   background-color: #444;
+          //   padding: 2px 4px;
+          // }
+        }
+        button{
+          width: 100%;
+          padding: .8rem;
+          border: none;
+          border: 3px solid #444;
+          background: transparent;
+          transition: .5s;
+          margin-top: 30px;
+          font-size: 1.25rem;
+          font-weight: 700;
+          font-family: monospace;
+          color: #444 !important;
+        }
+        button:hover{
+          background-color: #444;
+          color: #fff;
+        }
+      }
+    }
+
+    .shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #eee;
+    }
+    .shadow::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: calc(100% + 0px);
+      width: 110%;
+      height: 200%;
+      background: linear-gradient(#00000010, transparent);
+      transform: skewX(45deg);
+    }
+    .shadow::after {
+      content: "";
+      position: absolute;
+      bottom: -200%;
+      left: calc(100% + 50px);
+      width: 100%;
+      height: 200%;
+      background: linear-gradient(#00000010, transparent);
+      transform: skewX(45deg);
+    }
+    .cover {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: -50px;
+      background-color: #cfd1e1;
+      z-index: 2;
+    }
+  }
+  .login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 100%;
+    background: linear-gradient(#fff, #fff, #e3e3e3);
+    filter: blur(1px);
+    z-index: 1;
+  }
+  .login::after {
+    content: "";
+    position: absolute;
+    top: 1;
+    right: -1px;
+    width: 35px;
+    height: 100%;
+    background: #9d9d9d;
+    filter: blur(1px);
+    z-index: 1;
+  }
+}
